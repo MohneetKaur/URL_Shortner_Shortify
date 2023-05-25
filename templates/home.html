@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Shortener</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('history') }}">History</a>
+    </nav>
+    <h1>URL Shortener</h1>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter URL">
+        <button type="submit">Shorten</button>
+    </form>
+    {% if short_url %}
+        <p>Short URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
+        <button onclick="copyToClipboard('{{ short_url }}')">Copy</button>
+    {% endif %}
+    <script>
+        function copyToClipboard(text) {
+            var input = document.createElement('input');
+            input.setAttribute('value', text);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Copied to clipboard');
+        }
+    </script>
+</body>
+</html>
