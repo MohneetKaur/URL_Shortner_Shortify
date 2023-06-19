@@ -2,6 +2,80 @@
 <html>
 <head>
     <title>URL Shortener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        form {
+            margin: 30px auto;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        
+        button[type="submit"], button.copy-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        button.copy-button {
+            background-color: #28a745;
+            margin-left: 10px;
+        }
+        
+        p.short-url {
+            margin-top: 20px;
+            font-size: 16px;
+            text-align: center;
+        }
+        
+        a.short-url-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        a.short-url-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -14,8 +88,8 @@
         <button type="submit">Shorten</button>
     </form>
     {% if short_url %}
-        <p>Short URL: <a href="{{ short_url }}">{{ short_url }}</a></p>
-        <button onclick="copyToClipboard('{{ short_url }}')">Copy</button>
+        <p class="short-url">Short URL: <a class="short-url-link" href="{{ short_url }}">{{ short_url }}</a></p>
+        <button class="copy-button" onclick="copyToClipboard('{{ short_url }}')">Copy</button>
     {% endif %}
     <script>
         function copyToClipboard(text) {
