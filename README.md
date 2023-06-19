@@ -2,6 +2,9 @@
 
 The project is a Flask web application that focuses on URL shortening functionality. It utilizes SQLite as the database and SQLAlchemy as the Object-Relational Mapping (ORM) tool for interacting with the database.
 
+![image](https://github.com/MohneetKaur/URL_Shortner_Shortify/assets/84201530/b0b795b8-98b1-4c7a-b102-3612f833b97b)
+
+
 Here is a brief explanation of the project steps:
 
 Setup SQLite Database in Flask App:
